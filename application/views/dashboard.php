@@ -39,9 +39,10 @@
           <div class="card-body">
             <h5 class="card-title mb-1"><?php echo $brg->nama_brg ?></h5>
             <small><?php echo $brg->keterangan ?></small><br>
-            <span class="badge badge-pill badge-info mb-3">Rp. <?= number_format($brg->harga, '0', ',', '.') ?></span><br>
-            <a href="#" class="btn btn-sm btn-primary">Detail</a>
-            <?php echo anchor('dashboard/tambah_ke_keranjang/' . $brg->id_brg, '<div class="btn btn-sm btn-success">Tambah ke Keranjang </div>') ?>
+            <span class="badge badge-pill badge-info mb-3">Rp. <?= number_format($brg->harga, 0, ',', '.') ?></span><br>
+
+            <?php echo anchor('dashboard/tambah_ke_keranjang/' . $brg->id_brg, '<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>') ?>
+            <?php echo anchor('dashboard/detail/' . $brg->id_brg, '<div class="btn btn-sm btn-success">Detail</div>') ?>
           </div>
         </div>
 
