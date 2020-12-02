@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 01 Des 2020 pada 14.31
+-- Waktu pembuatan: 02 Des 2020 pada 11.59
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -48,7 +48,8 @@ INSERT INTO `tb_barang` (`id_brg`, `nama_brg`, `keterangan`, `kategori`, `harga`
 (3, 'Kemeja Hitam', 'Kemeja Lengan Pendek', 'Pakaian Pria', 35000, 10, 'Gambar_3.jpg'),
 (4, 'Baju Motif', 'Baju Lengan Panjang', 'Pakaian Wanita', 40000, 10, 'Gambar_4.jpg'),
 (5, 'Baju Pink', 'Baju Lengan Panjang', 'Pakaian Wanita', 45000, 10, 'Gambar_5.jpg'),
-(6, 'Outer Biru', 'Baju Lengan Panjang', 'Pakaian Wanita', 50000, 10, 'Gambar_6.jpg');
+(6, 'Outer Biru', 'Baju Lengan Panjang', 'Pakaian Wanita', 50000, 10, 'Gambar_6.jpg'),
+(7, 'Sandal anak', 'Sandal Anak Pria', 'Pakaian Anak-Anak', 20000, 30, 'Gambar_7.jpg');
 
 -- --------------------------------------------------------
 
@@ -137,7 +138,7 @@ ALTER TABLE `tb_pesanan`
 -- AUTO_INCREMENT untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
-  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_invoice`
