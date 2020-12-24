@@ -4,6 +4,8 @@ class Model_barang extends CI_Model
 {
     public function tampil_data()
     {
+        $this->db->limit(4);
+        $this->db->order_by('id_brg', "DESC");
         return $this->db->get('tb_barang');
     }
 
