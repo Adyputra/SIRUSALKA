@@ -5,11 +5,6 @@
             <div class="col-lg-12">
                 <div class="breadcrumb__text">
                     <h4>Shopping Cart</h4>
-                    <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Shopping Cart</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -32,7 +27,7 @@
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="cart_content">
                             <?php foreach ($this->cart->contents() as $cart) : ?>
                                 <tr>
                                     <td class="product__cart__item">
@@ -47,12 +42,12 @@
                                     <td class="quantity__item">
                                         <div class="quantity">
                                             <div class="pro-qty-2">
-                                                <input type="text" value="<?= $cart['qty']; ?>">
+                                                <input type="text" id="quantity" value="<?= $cart['qty']; ?>">
                                             </div>
                                         </div>
                                     </td>
                                     <td class="cart__price">Rp <?= number_format($cart['price'] * $cart['qty'], 0, '.', '.'); ?></td>
-                                    <td class="cart__close"><i class="fa fa-close"></i></td>
+                                    <td class="cart__close" id="hapus_item" data-id="<?= $cart['rowid']; ?>"><i class="fa fa-close" style="cursor:pointer"></i></td>
                                 </tr>
                             <?php endforeach ?>
                         </tbody>

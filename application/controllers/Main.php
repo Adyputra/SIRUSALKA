@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+use \Controllers\API;
 
 class Main extends CI_Controller
 {
@@ -23,9 +24,27 @@ class Main extends CI_Controller
     }
     public function cart()
     {
+        is_logged_in();
         $this->load->view('main/templates/header');
         $this->load->view('main/templates/topbar');
         $this->load->view('main/cart');
+        $this->load->view('main/templates/footer');
+    }
+
+    public function checkout()
+    {
+
+        $this->load->view('main/templates/header', $data);
+        $this->load->view('main/templates/topbar');
+        $this->load->view('main/checkout');
+        $this->load->view('main/templates/footer');
+    }
+    public function shop()
+    {
+
+        $this->load->view('main/templates/header');
+        $this->load->view('main/templates/topbar');
+        $this->load->view('main/shop');
         $this->load->view('main/templates/footer');
     }
 
@@ -46,5 +65,23 @@ class Main extends CI_Controller
         $this->cart->insert($data);
         $this->session->set_flashdata('addCart', 'sukses ditambahkan ke keranjang');
         redirect('main');
+    }
+
+    public function bayar()
+    {
+        $data = array(
+            'nama'          => $this->input->post('nama'),
+            'provinsi'      => $this->input->post('provinsi'),
+            'kabupaten'     => $this->input->post('kabupaten'),
+            'jalan'         => $this->input->post('jalan'),
+            'nomer'         => $this->input->post('nomer'),
+            'email'         => $this->input->post('email'),
+            'note'          => $this->input->post('note'),
+
+
+        );
+
+        $this->db->insert('tb_invoice', $data);
+        redirect()
     }
 }

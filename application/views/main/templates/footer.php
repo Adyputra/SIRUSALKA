@@ -109,6 +109,32 @@
    })
   </script>
  <?php endif; ?>
+
+ <script>
+     $(document).on('click', '#hapus_item', function () {
+        let rowid = $(this).data('id');
+        hapus_item(rowid)
+     })
+
+
+    function hapus_item(rowid){
+        $.ajax({
+            method: "POST",
+            url: `<?= base_url('API/delete_cart') ?>`,
+            data: {
+                row_id: rowid
+            },
+            dataType: "text",
+            success: function (response) {
+                location.reload();
+            }
+        });
+    }
+
+    $(document).on('change', '#quantity', function(){
+        
+    })
+ </script>
 </body>
 
 </html>
