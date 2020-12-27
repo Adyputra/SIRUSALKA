@@ -135,6 +135,38 @@
         
     })
  </script>
+    <script>
+        $(document).on('change', '#dropdown_provinsi', function(){
+            $('#dropdown_kabkota').html('<option selected>Silahkan Pilih Kab/Kota</option>');
+            var provinsi = $('#dropdown_provinsi').val();
+            $.ajax({
+                method: "GET",
+                url: `<?= base_url('API/tampilKabKota/') ?>${provinsi}`,
+                dataType: "JSON",
+                success: function (response) {
+                    $('#dropdown_kabkota').removeAttr('disabled');
+                    var provinsi = response.rajaongkir.results;
+                    provinsi.forEach(value => {
+                        $('#dropdown_kabkota').append('<option value='+ value.city_id + '>' + value.type + ' ' + value.city_name + '</option>');
+                        $('#dropdown_kabkota').niceSelect('update');
+                    })
+                }
+            });
+        })
+
+        $(document).on('change', '#dropdown_kabkota', function(){
+            var kabkota = $(this).val();
+            $.ajax({
+                method: "GET",
+                url: "<?= base_url('API/hitungOngkir/') ?>" + kabkota,
+                dataType: "JSON",
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        })
+    </script>
+
 </body>
 
 </html>

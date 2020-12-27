@@ -52,4 +52,19 @@ class Model_barang extends CI_Model
             return false;
         }
     }
+
+    public function getAllBarang()
+    {
+        return $this->db->get('tb_barang')->result_array();
+    }
+
+    public function getKategori()
+    {
+        return $this->db->get('tb_kategori')->result_array();
+    }
+
+    public function getBarangByKategori($kategori)
+    {
+        return $this->db->get_where('tb_barang', ['kategori' => $kategori])->result_array();
+    }
 }

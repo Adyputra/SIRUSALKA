@@ -37,16 +37,19 @@
                             </div>
                             <div class="checkout__input">
                                 <p>Province<span>*</span></p>
-                                <select name="provinsi" id="dropdown_provinsi">
-                                    <option value="">Jawa Timur</option>
+                                <select class="form-select" name="provinsi" id="dropdown_provinsi">
+                                    <option selected>Silahkan Pilih Provinsi</option>
+                                    <?php foreach ($provinsi as $prov) : ?>
+                                        <option value="<?= $prov->province_id; ?>"><?= $prov->province; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
                             <br>
                             <br>
                             <div class="checkout__input">
                                 <p>Town/City<span>*</span></p>
-                                <select name="kabupaten" id="dropdown_provinsi">
-                                    <option value="">Jawa Timur</option>
+                                <select name="kabupaten" id="dropdown_kabkota" disabled>
+                                    <option selected>Silahkan Pilih Kab/Kota</option>
                                 </select>
                             </div>
                             <br>
@@ -90,7 +93,7 @@
                                     <?php endforeach; ?>
                                 </ul>
                                 <ul class="checkout__total__all">
-                                    <li>Subtotal <span>$750.99</span></li>
+                                    <li>Subtotal <span>Rp <?= number_format($this->cart->total(), 0, '.', '.') ?></span></li>
                                     <li>Total <span>$750.99</span></li>
                                 </ul>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
