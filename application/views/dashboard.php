@@ -1,51 +1,130 @@
-<!-- Begin Page Content -->
 <div class="container-fluid">
+    <h2>Dashboard</h2>
+    <!-- Content Row -->
+    <div class="row">
 
-  <!-- Page Heading -->
-  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-  </div>
+        <!-- Jumlah orderan belum bayar -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jumlah Orderan Belum Bayar</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <div class="container-fluid">
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="<?php echo base_url('assets/img/slider1.jpg') ?>" class="d-block w-100" alt="...">
+        <!-- Jumlah penjualam -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Jumlah Penjualan</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="carousel-item">
-          <img src="<?php echo base_url('assets/img/slider2.jpg') ?>" class="d-block w-100" alt="...">
+
+        <!-- Jumlah orderan belum di acc -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Jumlah Order Belum di ACC</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+
+        <!-- Jumlah User -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Jumlah User</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">1</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="row text-center mt-4">
-      <?php foreach ($barang as $brg) : ?>
-
-        <div class="card ml-3 mb-3" style="width: 18rem;">
-          <img style="height: 200px" src="<?php echo base_url() . 'uploads/' . $brg->gambar ?>" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title mb-1"><?php echo $brg->nama_brg ?></h5>
-            <small><?php echo $brg->keterangan ?></small><br>
-            <span class="badge badge-pill badge-info mb-3">Rp. <?= number_format($brg->harga, 0, ',', '.') ?></span><br>
-
-            <?php echo anchor('dashboard/tambah_ke_keranjang/' . $brg->id_brg, '<div class="btn btn-sm btn-primary">Tambah ke Keranjang</div>') ?>
-            <?php echo anchor('dashboard/detail/' . $brg->id_brg, '<div class="btn btn-sm btn-success">Detail</div>') ?>
-          </div>
+    <!-- Statistik Barang -->
+    <div class="col-xl-6 col-md-6 mb-4">
+            <div class="card border-left h-100 py-5">
+                <div class="card-body">
+                    <h4> Statistik Barang </h4>
+                    <div class="row no-gutters align-items-center">
+	                    <div class="col mr-2">
+		                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Kalender max 100</div>
+		                    <div class="row no-gutters align-items-center">
+			                    <div class="col-auto">
+				                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">6</div>
+			                    </div>
+			                <div class="col">
+				        <div class="progress progress-sm mr-2">
+					<div class="progress-bar bg-info" role="progressbar" style="width: 5%" aria-valuenow="50"aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+		</div>
+        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Undangan max 100</div>
+		<div class="row no-gutters align-items-center">
+			<div class="col-auto">
+				<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">4</div>
+			</div>
+			<div class="col">
+				<div class="progress progress-sm mr-2">
+					<div class="progress-bar bg-info" role="progressbar" style="width: 2%" aria-valuenow="50"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+            </div>
         </div>
+</div>
 
-      <?php endforeach; ?>
-    </div>
-  </div>
+
+
+
+
+
+
+
+
+
+
