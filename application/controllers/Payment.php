@@ -100,8 +100,6 @@ class Payment extends CI_Controller
 
     public function finish()
     {
-        var_dump($this->session->userdata('transaksi'));
-
         $data = $this->session->userdata('transaksi');
         $nama = $data['customer']['first_name'];
         $provinsi = $data['provinsi'];
@@ -113,8 +111,19 @@ class Payment extends CI_Controller
         $jumlah = $this->cart->total();
         $tgl_pesan = date('d-m-Y H:i:s');
         $data = [
-            ''
+            'nama' => $nama,
+            'provinsi' => $provinsi,
+            'kabupaten' => $kabupaten,
+            'jalan' => $jalan,
+            'nomer' => $nomer,
+            'email' => $email,
+            'note' => $note,
+            'jumlah' => $jumlah,
+            'tgl_pesan' => $tgl_pesan
         ];
-        $this->db->insert('tb_invoice', );
+        $this->db->insert('tb_invoice', $data);
+        $this->cart->destroy();
+        $this->session->set_flashdata('transaksi_sukses', 'Transaksi Sudah Selesai');
+        redirect('Main');
     }
 }

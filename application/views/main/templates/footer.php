@@ -77,6 +77,7 @@
 
  <!-- Js Plugins -->
  <script src="<?= base_url('assets/main/') ?>js/jquery-3.3.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
  <script src="<?= base_url('assets/main/') ?>js/bootstrap.min.js"></script>
  <script src="<?= base_url('assets/main/') ?>js/jquery.nice-select.min.js"></script>
  <script src="<?= base_url('assets/main/') ?>js/jquery.nicescroll.min.js"></script>
@@ -86,6 +87,17 @@
  <script src="<?= base_url('assets/main/') ?>js/mixitup.min.js"></script>
  <script src="<?= base_url('assets/main/') ?>js/owl.carousel.min.js"></script>
  <script src="<?= base_url('assets/main/') ?>js/main.js"></script>
+
+<?php if($this->session->flashdata('transaksi_sukses')) : ?>
+<script>
+    Swal.fire(
+    'Hooray',
+    'Transaksi Sudah Selesai',
+    'success'
+    )
+</script>
+<?php endif; ?>
+
 
  <?php if ($this->session->flashdata('addCart')) : ?>
   <script>

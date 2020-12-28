@@ -21,7 +21,7 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form action=" <?= base_url('Payment/checkout'); ?> " method="post">
+                <form action=" <?= base_url('Payment/checkout'); ?>" method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <div class="row">
@@ -57,7 +57,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Address<span>*</span></p>
-                                        <input type="text" nama="alamat" placeholder="Street Address">
+                                        <input type="text" name="alamat" placeholder="Street Address">
                                     </div>
                                 </div>
                             </div>
