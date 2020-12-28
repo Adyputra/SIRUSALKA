@@ -67,7 +67,7 @@
                     <ul>
                         <li>Total <span>Rp <?= number_format($this->cart->total(), 0, '.', '.') ?></span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceed to checkout</a>
+                    <a href="<?= base_url('main/checkout'); ?>" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>

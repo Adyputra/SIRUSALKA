@@ -107,8 +107,6 @@ class Main extends CI_Controller
             'nomer'         => $this->input->post('nomer'),
             'email'         => $this->input->post('email'),
             'note'          => $this->input->post('note'),
-
-
         );
 
         $this->db->insert('tb_invoice', $data);

@@ -21,12 +21,9 @@
     <section class="checkout spad">
         <div class="container">
             <div class="checkout__form">
-                <form action=" <?= base_url('main/bayar'); ?> " method="post">
+                <form action=" <?= base_url('Payment/checkout'); ?> " method="post">
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
-                            <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                                    here</a> to enter your code</h6>
-                            <h6 class="checkout__title">Billing Details</h6>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
@@ -43,6 +40,7 @@
                                         <option value="<?= $prov->province_id; ?>"><?= $prov->province; ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                                <input type="hidden" id="input_provinsi" name="provinsi">
                             </div>
                             <br>
                             <br>
@@ -51,6 +49,7 @@
                                 <select name="kabupaten" id="dropdown_kabkota" disabled>
                                     <option selected>Silahkan Pilih Kab/Kota</option>
                                 </select>
+                                <input type="hidden" id="input_kabkota" name="kabkota">
                             </div>
                             <br>
                             <br>
@@ -58,7 +57,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Address<span>*</span></p>
-                                        <input type="text" nama="jalan" placeholder="Street Address">
+                                        <input type="text" nama="alamat" placeholder="Street Address">
                                     </div>
                                 </div>
                             </div>
@@ -66,7 +65,7 @@
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text" name="nomer">
+                                        <input type="text" name="phone">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -93,8 +92,11 @@
                                     <?php endforeach; ?>
                                 </ul>
                                 <ul class="checkout__total__all">
+                                    <input type="hidden" id="input_ongkir" name="ongkir">
+                                    <input type="hidden" id="input_subtotal" name="subtotal" value="<?= $this->cart->total(); ?>">
                                     <li>Subtotal <span>Rp <?= number_format($this->cart->total(), 0, '.', '.') ?></span></li>
-                                    <li>Total <span>$750.99</span></li>
+                                    <li id="ongkir"></li>
+                                    <li id="total_harga">Total <span>Rp <?= number_format($this->cart->total(), 0, '.', '.') ?></span></li>
                                 </ul>
                                 <button type="submit" class="site-btn">PLACE ORDER</button>
                             </div>

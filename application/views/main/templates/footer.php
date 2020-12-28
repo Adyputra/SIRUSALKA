@@ -139,6 +139,8 @@
         $(document).on('change', '#dropdown_provinsi', function(){
             $('#dropdown_kabkota').html('<option selected>Silahkan Pilih Kab/Kota</option>');
             var provinsi = $('#dropdown_provinsi').val();
+            var prov = $(this).html();
+            $('#input_provinsi').val(prov);
             $.ajax({
                 method: "GET",
                 url: `<?= base_url('API/tampilKabKota/') ?>${provinsi}`,
@@ -156,12 +158,21 @@
 
         $(document).on('change', '#dropdown_kabkota', function(){
             var kabkota = $(this).val();
+            var kota = document.getElementById("dropdown_kabkota").options[document.getElementById("dropdown_kabkota").selectedIndex].text;
+            console.log(kota);
+            $('#input_kabkota').val(kota);
             $.ajax({
                 method: "GET",
                 url: "<?= base_url('API/hitungOngkir/') ?>" + kabkota,
                 dataType: "JSON",
                 success: function (response) {
-                    console.log(response)
+                    var output = response.rajaongkir.results[0].costs[0].cost[0].value;
+                    var ongkir = (output/1000).toFixed(3);
+                    var subtotal = parseInt($('#input_subtotal').val());
+                    var total = ((subtotal + output)/1000).toFixed(3);
+                    $('#input_ongkir').val(output);
+                    $('#ongkir').html(`Ongkir <span id='ongkir'>Rp ${ongkir}</span>`);
+                    $('#total_harga').html(`Total <span id='ongkir'>Rp ${total}</span>`);
                 }
             });
         })

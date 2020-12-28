@@ -6,11 +6,11 @@ class model_invoice extends CI_Model
     {
         date_default_timezone_set('Asia/Jakarta');
         $nama   = $this->input->post('nama');
-        $alamat = $this->input->post('alamat');
+        $alamat = $this->input->post('kabupaten');
 
         $invoice = array(
             'nama'          => $nama,
-            'alamat'        => $alamat,
+            'kabupaten'     => $alamat,
             'tgl_pesan'     => date('Y-m-d H:i:s'),
             'batas_bayar'   => date('Y-m-d H:i:s', mktime(date('H'), date('i'), date('s'), date('m'), date('d') + 1, date('Y'))),
         );
@@ -19,9 +19,9 @@ class model_invoice extends CI_Model
 
         foreach ($this->cart->contents() as $item) {
             $data = array(
-                'id_invoice'        => $id_invoice,
+                'id'        => $id_invoice,
                 'id_brg'            => $item['id'],
-                'nama_brg'          => $item['name'],
+                'nama'          => $item['name'],
                 'jumlah'            => $item['qty'],
                 'harga'             => $item['price'],
             );
