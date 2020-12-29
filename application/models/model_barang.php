@@ -68,8 +68,12 @@ class Model_barang extends CI_Model
         return $this->db->get('tb_kategori')->result_array();
     }
 
-    public function getBarangByKategori($kategori)
+    public function getBarangByKategori($kategori, $keyword = null)
     {
+        if ($keyword) {
+            $this->db->like('nama_brg', $keyword);
+        }
         return $this->db->get_where('tb_barang', ['kategori' => $kategori])->result_array();
     }
+    
 }

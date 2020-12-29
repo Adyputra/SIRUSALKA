@@ -11,6 +11,7 @@ class Main extends CI_Controller
     {
         parent::__construct();
         $this->load->model('model_barang', 'barang');
+        $this->load->model('model_invoice', 'invoice');
     }
 
 
@@ -26,10 +27,11 @@ class Main extends CI_Controller
     public function pesanan()
     {
         // var_dump($this->cart->contents());die;
+        $data['invoice'] = $this->invoice->tampil_data()->result();
         $data['barang'] = $this->barang->tampil_data()->result();
         $this->load->view('main/templates/header', $data);
         $this->load->view('main/templates/topbar');
-        $this->load->view('main/index');
+        $this->load->view('main/pesanan');
         $this->load->view('main/templates/footer');
     }
     public function shopdetail($id_brg)
@@ -86,9 +88,14 @@ class Main extends CI_Controller
 
     public function shop()
     {
+        if ($this->input->post('submit')) {
+            $data['keyword'] = $this->input->post('keyword');
+        } else {
+            $data['keyword'] = null;
+        }
         if ($this->input->get('kategori')) {
 
-            $data['barang'] = $this->barang->getBarangByKategori($this->input->get('kategori'));
+            $data['barang'] = $this->barang->getBarangByKategori($this->input->get('kategori'), $data['keyword']);
         } else {
             $data['barang'] = $this->barang->getAllBarang();
         }
