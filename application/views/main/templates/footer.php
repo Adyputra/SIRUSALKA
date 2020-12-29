@@ -10,18 +10,6 @@
                  <a href="#"><img src="<?= base_url('assets/main/') ?>img/payment.png" alt=""></a>
              </div>
          </div>
-         <div class="text-center">
-             <div class="footer__copyright__text ">
-                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                 <p>Copyright ©
-                     <script>
-                         document.write(new Date().getFullYear());
-                     </script>
-                     All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                 </p>
-                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-             </div>
-         </div>
      </div>
  </footer>
  <!-- Footer Section End -->
@@ -153,18 +141,18 @@
  </script>
  <script>
      function validateForm() {
-  var x = document.forms["myForm"]["nama"].value;
-  var x = document.forms["myForm"]["provinsi"].value;
-  var x = document.forms["myForm"]["kabkota"].value;
-  var x = document.forms["myForm"]["alamat"].value;
-  var x = document.forms["myForm"]["phone"].value;
-  var x = document.forms["myForm"]["email"].value;
-  var x = document.forms["myForm"]["note"].value;
-  if (x == "") {
-    alert("isi data dengan lengkap");
-    return false;
-  }
-}
+         var x = document.forms["myForm"]["nama"].value;
+         var x = document.forms["myForm"]["provinsi"].value;
+         var x = document.forms["myForm"]["kabkota"].value;
+         var x = document.forms["myForm"]["alamat"].value;
+         var x = document.forms["myForm"]["phone"].value;
+         var x = document.forms["myForm"]["email"].value;
+         var x = document.forms["myForm"]["note"].value;
+         if (x == "") {
+             alert("isi data dengan lengkap");
+             return false;
+         }
+     }
  </script>
 
  </body>
