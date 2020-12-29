@@ -61,9 +61,9 @@
                     <div class="form-group">
                         <label>Kategori</label>
                         <select class="form-control" name="kategori">
-                            <option>Pakaian Pria</option>
-                            <option>Pakaian Wanita</option>
-                            <option>Pakaian Anak-Anak</option>
+                            <option value="1">Pakaian Pria</option>
+                            <option value="2">Pakaian Wanita</option>
+                            <option value="3">Pakaian Anak-Anak</option>
                         </select>
                     </div>
                     <div class="form-group">

@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
+
 use \Controllers\API;
 
 class Main extends CI_Controller
@@ -20,6 +21,15 @@ class Main extends CI_Controller
         $this->load->view('main/templates/header', $data);
         $this->load->view('main/templates/topbar');
         $this->load->view('main/index');
+        $this->load->view('main/templates/footer');
+    }
+    public function shopdetail()
+    {
+        // var_dump($this->cart->contents());die;
+        $data['barang'] = $this->barang->tampil_data()->result();
+        $this->load->view('main/templates/header', $data);
+        $this->load->view('main/templates/topbar');
+        $this->load->view('main/shopdetail');
         $this->load->view('main/templates/footer');
     }
     public function cart()
@@ -64,11 +74,13 @@ class Main extends CI_Controller
         $this->load->view('main/checkout');
         $this->load->view('main/templates/footer');
     }
+
     public function shop()
     {
         if ($this->input->get('kategori')) {
+
             $data['barang'] = $this->barang->getBarangByKategori($this->input->get('kategori'));
-        }else {
+        } else {
             $data['barang'] = $this->barang->getAllBarang();
         }
         $data['kategori'] = $this->barang->getKategori();
@@ -110,6 +122,6 @@ class Main extends CI_Controller
         );
 
         $this->db->insert('tb_invoice', $data);
-        return('main/checkout');
+        return ('main/checkout');
     }
 }

@@ -8,6 +8,11 @@ class Model_barang extends CI_Model
         $this->db->order_by('id_brg', "DESC");
         return $this->db->get('tb_barang');
     }
+    public function tampil_data1()
+    {
+        $this->db->order_by('id_brg', "DESC");
+        return $this->db->get('tb_barang');
+    }
 
     public function tambah_barang($data, $table)
     {

@@ -54,7 +54,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="<?= base_url('assets/main/') ?>img/logo2.png" alt=""></a>
+                    <a href="<?= base_url('main'); ?>"><img src="<?= base_url('assets/main/') ?>img/logo2.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6">

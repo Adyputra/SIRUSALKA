@@ -5,9 +5,10 @@
         <tr>
             <th>Id Invoice</th>
             <th>Nama Pemesan</th>
-            <th>Alamat Pengiriman</th>
+            <th>Alamat</th>
             <th>Tanggal Pemesanan</th>
-            <th>Batas Pembayaran</th>
+            <th>Note</th>
+            <th>Total Belanja</th>
             <th>Aksi</th>
         </tr>
 
@@ -15,9 +16,10 @@
             <tr>
                 <td><?php echo $inv->id ?></td>
                 <td><?php echo $inv->nama ?></td>
-                <td><?php echo $inv->alamat ?></td>
+                <td><?php echo $inv->provinsi ?> <?= $inv->kabupaten; ?> <?= $inv->jalan; ?></td>
+                <td><?php echo $inv->note ?></td>
+                <td><?php echo $inv->jumlah ?></td>
                 <td><?php echo $inv->tgl_pesan ?></td>
-                <td><?php echo $inv->batas_bayar ?></td>
                 <td><?php echo anchor('admin/invoice/detail/' . $inv->id, '<div class="btn btn-sm btn-primary">Detail</div>') ?>
                 </td>
             </tr>
