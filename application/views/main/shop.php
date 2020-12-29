@@ -43,13 +43,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><?= $b['nama_brg']; ?></h6>
-                                    <a href="#" class="add-cart">+ Add To Cart</a>
-                                    <div class="rating">
-                                        <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                            <i class="fa fa-star<?= $i <= $b['rating'] ? '' : '-o' ?>"></i>
-                                        <?php } ?>
-                                    </div>
+                                    <h6><?= $b['nama_brg'] ?></h6>
+                                    <?php echo anchor('main/shopdetail/' . $b['id_brg'], '<div class="btn btn-sm btn-dark">Detail</div>') ?>
                                     <h5>Rp <?= number_format($b['harga'], 0, '.', '.'); ?></h5>
                                 </div>
                             </div>

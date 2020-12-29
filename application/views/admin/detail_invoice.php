@@ -18,7 +18,7 @@
 
             <tr>
                 <td><?php echo $psn->id_brg ?></td>
-                <td><?php echo $psn->$nama_brg ?></td>
+                <td><?php echo $psn->nama_brg ?></td>
                 <td><?php echo $psn->jumlah ?></td>
                 <td><?php echo number_format($psn->harga, 0, ',', '.') ?></td>
             </tr>
