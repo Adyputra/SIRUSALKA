@@ -3,7 +3,7 @@
 
     <table class="table table-bordered table-hover table-striped">
         <tr>
-            <th>Id Invoice</th>
+            <th>Id invoice</th>
             <th>Nama Pemesan</th>
             <th>Alamat</th>
             <th>Tanggal Pemesanan</th>
