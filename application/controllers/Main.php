@@ -23,10 +23,19 @@ class Main extends CI_Controller
         $this->load->view('main/index');
         $this->load->view('main/templates/footer');
     }
-    public function shopdetail()
+    public function pesanan()
     {
         // var_dump($this->cart->contents());die;
         $data['barang'] = $this->barang->tampil_data()->result();
+        $this->load->view('main/templates/header', $data);
+        $this->load->view('main/templates/topbar');
+        $this->load->view('main/index');
+        $this->load->view('main/templates/footer');
+    }
+    public function shopdetail($id_brg)
+    {
+        // var_dump($this->cart->contents());die;
+        $data['barang'] = $this->barang->detail_brg($id_brg);
         $this->load->view('main/templates/header', $data);
         $this->load->view('main/templates/topbar');
         $this->load->view('main/shopdetail');

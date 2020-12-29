@@ -11,6 +11,7 @@
                 $name = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row()->nama;
             ?>
                 <a href="#">Halo, <?= $name; ?></a>
+                <a href="<?= base_url('main/pesanan') ?>">Pesanan</a>
                 <a href="<?= base_url('Auth/logout') ?>">Log Out</a>
             <?php else : ?>
                 <a href="<?= base_url('Auth/login') ?>">Log in</a>
@@ -40,6 +41,7 @@
                                 $name = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row()->nama;
                             ?>
                                 <a href="#">Halo, <?= $name; ?></a>
+                                <a href="<?= base_url('main/pesanan') ?>">Pesanan</a>
                                 <a href="<?= base_url('Auth/logout') ?>">Log Out</a>
                             <?php else : ?>
                                 <a href="<?= base_url('Auth/login') ?>">Log in</a>

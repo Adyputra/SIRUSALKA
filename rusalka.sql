@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Des 2020 pada 12.18
+-- Waktu pembuatan: 29 Des 2020 pada 07.42
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.8
 
@@ -43,7 +43,6 @@ CREATE TABLE `tb_barang` (
 --
 
 INSERT INTO `tb_barang` (`id_brg`, `nama_brg`, `keterangan`, `kategori`, `harga`, `stok`, `rating`, `gambar`) VALUES
-(1, 'Kemeja Biru', 'Kemeja Lengan Pendek', '1', 35000, 8, 0, 'Gambar_1.jpg'),
 (2, 'Kemeja Biru Tua', 'Kemeja Lengan Pendek', '1', 35000, 10, 0, 'Gambar_2.jpg'),
 (3, 'Kemeja Hitam', 'Kemeja Lengan Pendek', '1', 35000, 10, 0, 'Gambar_3.jpg'),
 (4, 'Baju Motif', 'Baju Lengan Panjang', '2', 40000, 9, 0, 'Gambar_4.jpg'),
@@ -66,9 +65,18 @@ CREATE TABLE `tb_invoice` (
   `nomer` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `note` varchar(255) NOT NULL,
-  `tgl_pesan` datetime NOT NULL,
-  `batas_bayar` datetime NOT NULL
+  `jumlah` int(11) NOT NULL,
+  `tgl_pesan` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tb_invoice`
+--
+
+INSERT INTO `tb_invoice` (`id`, `nama`, `provinsi`, `kabupaten`, `jalan`, `nomer`, `email`, `note`, `jumlah`, `tgl_pesan`) VALUES
+(11, 'ays', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\">Bali</option>\r\n                                                      ', 'Kabupaten Kulon Progo', 'sudirman', '083134920109', 'ferrys.nainin@yahoo.com', 'mookom', 50000, '0000-00-00 00:00:00'),
+(12, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Bangka', 'sudirman', '083134920109', 'ferrysnainin@gmail.com', 'asd', 45000, '0000-00-00 00:00:00'),
+(13, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Bangka Barat', 'sudirman', '83134920109', 'e41180854@student.polije.ac.id', 'fdhd', 70000, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -157,7 +165,8 @@ INSERT INTO `tb_user` (`id`, `nama`, `username`, `password`, `role_id`) VALUES
 (1, 'admin', 'admin', '123', 1),
 (2, 'user', 'user', '123', 2),
 (3, 'Ady', 'Ady04', '123', 2),
-(4, 'sososo', 'asd', '$2y$10$U.yecSUMMnCyziizy1mwkO4DiQeNZHCuFRaaEGGIK0f4oJn1oJyEq', 2);
+(4, 'sososo', 'asd', '$2y$10$U.yecSUMMnCyziizy1mwkO4DiQeNZHCuFRaaEGGIK0f4oJn1oJyEq', 2),
+(5, 'AAA', 'SSS', '$2y$10$XRL/5ZoXutmur4.5DpKn.u3HM6mD9tDBQOAPiTwu2J7h9Lxd/KnWq', 1);
 
 --
 -- Indexes for dumped tables
@@ -201,13 +210,13 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_barang`
 --
 ALTER TABLE `tb_barang`
-  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_brg` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori`
@@ -225,7 +234,7 @@ ALTER TABLE `tb_pesanan`
 -- AUTO_INCREMENT untuk tabel `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

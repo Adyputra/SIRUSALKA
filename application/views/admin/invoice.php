@@ -16,7 +16,7 @@
             <tr>
                 <td><?php echo $inv->id ?></td>
                 <td><?php echo $inv->nama ?></td>
-                <td><?php echo $inv->provinsi ?> <?= $inv->kabupaten; ?> <?= $inv->jalan; ?></td>
+                <td><?php echo $inv->kabupaten; ?> <?= $inv->jalan; ?></td>
                 <td><?php echo $inv->note ?></td>
                 <td><?php echo $inv->jumlah ?></td>
                 <td><?php echo $inv->tgl_pesan ?></td>

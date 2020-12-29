@@ -38,9 +38,6 @@
           <div class="product__item sale">
             <div class="product__item__pic set-bg" data-setbg="<?= base_url('uploads/') ?><?= $b->gambar; ?>">
               <span class="label">New</span>
-              <ul class="product__hover">
-                <li><a href="#"><img src="<?= base_url('assets/main/') ?>img/icon/heart.png" alt=""></a></li>
-              </ul>
             </div>
             <div class="product__item__text">
               <h6><?= $b->nama_brg; ?></h6>
@@ -53,6 +50,7 @@
               </div>
               <h5>Rp <?= number_format($b->harga, 0, '.', '.'); ?></h5>
             </div>
+            <?php echo anchor('main/shopdetail/' . $b->id_brg, '<div class="btn btn-sm btn-dark">Detail</div>') ?>
           </div>
         </div>
       <?php endforeach; ?>
