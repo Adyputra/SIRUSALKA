@@ -11,7 +11,6 @@
                 $name = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row()->nama;
             ?>
                 <a href="#">Halo, <?= $name; ?></a>
-                <a href="<?= base_url('main/pesanan') ?>">Pesanan</a>
                 <a href="<?= base_url('Auth/logout') ?>">Log Out</a>
             <?php else : ?>
                 <a href="<?= base_url('Auth/login') ?>">Log in</a>
@@ -19,7 +18,6 @@
         </div>
     </div>
     <div class="offcanvas__nav__option">
-        <a href="#" class="search-switch"><img src="<?= base_url('assets/main/') ?>img/icon/search.png" alt=""></a>
         <a href="<?= base_url('main/cart'); ?>"><img src="<?= base_url('assets/main/') ?>img/icon/cart.png" alt=""> <span><?= $this->cart->total_items() ?></span></a>
         <div class="price">Rp <?= number_format($this->cart->total(), 0, '.', '.'); ?></div>
     </div>
@@ -41,7 +39,6 @@
                                 $name = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row()->nama;
                             ?>
                                 <a href="#">Halo, <?= $name; ?></a>
-                                <?php echo anchor('main/pesanan/' . $name, '<div class="btn btn-dark">Pesanan</div>') ?>
                                 <a href="<?= base_url('Auth/logout') ?>">Log Out</a>
                             <?php else : ?>
                                 <a href="<?= base_url('Auth/login') ?>">Log in</a>
@@ -63,7 +60,6 @@
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class="header__nav__option">
-                    <a href="#" class="search-switch"><img src="<?= base_url('assets/main/') ?>img/icon/search.png" alt=""></a>
                     <a href="<?= base_url('main/cart'); ?>"><img src="<?= base_url('assets/main/') ?>img/icon/cart.png" alt=""> <span><?= $this->cart->total_items() ?></span></a>
                     <div class="price">Rp <?= number_format($this->cart->total(), 0, '.', '.'); ?></div>
                 </div>
