@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Des 2020 pada 07.42
+-- Waktu pembuatan: 03 Jan 2021 pada 15.14
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.8
 
@@ -76,7 +76,14 @@ CREATE TABLE `tb_invoice` (
 INSERT INTO `tb_invoice` (`id`, `nama`, `provinsi`, `kabupaten`, `jalan`, `nomer`, `email`, `note`, `jumlah`, `tgl_pesan`) VALUES
 (11, 'ays', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\">Bali</option>\r\n                                                      ', 'Kabupaten Kulon Progo', 'sudirman', '083134920109', 'ferrys.nainin@yahoo.com', 'mookom', 50000, '0000-00-00 00:00:00'),
 (12, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Bangka', 'sudirman', '083134920109', 'ferrysnainin@gmail.com', 'asd', 45000, '0000-00-00 00:00:00'),
-(13, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Bangka Barat', 'sudirman', '83134920109', 'e41180854@student.polije.ac.id', 'fdhd', 70000, '0000-00-00 00:00:00');
+(13, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Bangka Barat', 'sudirman', '83134920109', 'e41180854@student.polije.ac.id', 'fdhd', 70000, '0000-00-00 00:00:00'),
+(14, 'sdfgws', '\r\n                                <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                    <option value=\"1\"> Bali</option>\r\n                                                                 ', 'Kabupaten Bangka', 'sudirman', '083134920109', 'titikindrayati05@gmail.com', 'Asfda', 20000, '0000-00-00 00:00:00'),
+(15, 'asd', '\r\n                                <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                    <option value=\"1\"> Bali</option>\r\n                                                                 ', 'Kabupaten Bangli', 'sudirman', '083134920109', 'titikindrayati05@gmail.com', 'asx', 50000, '2020-12-29 17:39:09'),
+(16, 'AAA', '\r\n                                <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                    <option value=\"1\"> Bali</option>\r\n                                                                 ', 'Kabupaten Bangli', 'as', '83134920109', 'ferrysnainin@gmail.com', 'asfdtg', 45000, '2020-12-29 17:56:46'),
+(17, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Badung', 'wrfdgsfr', '083134920109', 'aam_zombiesgila@yahoo.com', 'asx', 75000, '2020-12-29 21:16:08'),
+(18, 'sososo', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Badung', 'sudirman', '083134920109', 'titikindrayati05@gmail.com', 'mookom', 45000, '2020-12-30 05:11:05'),
+(19, 'AAA', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Jember', 'sudirman', '083134920109', 'ferrysnainin@gmail.com', 'klm', 85000, '2020-12-30 05:27:55'),
+(20, 'sososo', '\r\n                                    <option selected=\"\">Silahkan Pilih Provinsi</option>\r\n                                                                            <option value=\"1\"> Bali</option>\r\n                                                     ', 'Kabupaten Gunung Kidul', 'sudirman', '083134920109', 'titikindrayati05@gmail.com', 'horas', 50000, '2021-01-03 14:53:37');
 
 -- --------------------------------------------------------
 
@@ -216,7 +223,7 @@ ALTER TABLE `tb_barang`
 -- AUTO_INCREMENT untuk tabel `tb_invoice`
 --
 ALTER TABLE `tb_invoice`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori`

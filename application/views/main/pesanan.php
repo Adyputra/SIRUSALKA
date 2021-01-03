@@ -8,32 +8,38 @@
                             <tr>
                                 <th>Nama</th>
                                 <th>Alamat</th>
-                                <th>Nomer</th>
+                                <th>Phone</th>
                                 <th>Tanggal</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>  
-                            <?php foreach ($invoice as $i) : ?>
+                            <tr>
                                 <td class="product__cart__item">
                                     <div class="product__cart__item__pic">
                                         <img src="img/shopping-cart/cart-1.jpg" alt="">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6><?= $i->nama; ?></h6>
-                                        <h5>$98.49</h5>
+                                        nama
                                     </div>
                                 </td>
-                                <td class="quantity__item">
-                                    <div class="quantity">
-                                        <div class="pro-qty-2">
-                                            <input type="text" value="1">
-                                        </div>
+
+                                <td>
+                                    <div class="product__cart__item__text">
+                                        alamat
                                     </div>
                                 </td>
-                                <td class="cart__price">$ 30.00</td>
-                                <?php endforeach; ?>
+                                <td>
+                                    <div class="product__cart__item__text">
+                                        phone
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="product__cart__item__text">
+                                        tanggal
+                                    </div>
+                                </td>
+                                <td class="cart__price">ffff</td>
                             </tr>
                         </tbody>
                     </table>
