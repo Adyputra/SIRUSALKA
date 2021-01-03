@@ -21,7 +21,7 @@
                                         <img src="img/shopping-cart/cart-1.jpg" alt="">
                                     </div>
                                     <div class="product__cart__item__text">
-                                        <h6><?= $name; ?></h6>
+                                        <h6><?= $i->nama; ?></h6>
                                         <h5>$98.49</h5>
                                     </div>
                                 </td>
