@@ -6,9 +6,9 @@
             <th>Id invoice</th>
             <th>Nama Pemesan</th>
             <th>Alamat</th>
-            <th>Tanggal Pemesanan</th>
             <th>Note</th>
             <th>Total Belanja</th>
+            <th>Tanggal Pemesanan</th>
         </tr>
 
         <?php foreach ($invoice as $inv) : ?>
