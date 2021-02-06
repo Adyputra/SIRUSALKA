@@ -1,6 +1,6 @@
 <?php
 
-class Model_invoice extends CI_Model
+class model_invoice extends CI_Model
 {
     public function index()
     {
